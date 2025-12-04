@@ -45,6 +45,11 @@ coverage/
 tmp/
 temp/
 
+# Developer documents
+dev/
+.claude/
+.serena/
+
 # Database files
 *.db
 *.pglite
