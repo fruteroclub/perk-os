@@ -1,330 +1,227 @@
-# ElizaOS Plugin
+# PerkOS Community Directory Plugin
 
-This is an ElizaOS plugin built with the official plugin starter template.
+ElizaOS plugin for conversational member directory with GitHub verification, reputation scoring, and invitation management.
 
-## Getting Started
+## Overview
 
-```bash
-# Create a new plugin (automatically adds "plugin-" prefix)
-elizaos create --type plugin solana
-# This creates: plugin-solana
-# Dependencies are automatically installed and built
+This plugin provides the Community Directory feature for kukulcán, the first PerkOS Community Agent. It enables:
 
-# Navigate to the plugin directory
-cd plugin-solana
+- **Member Registration**: Telegram-based conversational registration flow
+- **GitHub Verification**: Identity verification via GitHub profile
+- **Reputation Scoring**: GitHub-based reputation calculation and tier assignment
+- **Invitation System**: Invite-only membership with trackable invitation codes
+- **Participation Tracking**: Cross-platform engagement monitoring
 
-# Start development immediately
-elizaos dev
+## Architecture
+
+### Hybrid Data Strategy
+
+| Data Type | Storage | Purpose |
+|-----------|---------|---------|
+| Member Profiles | Drizzle/PostgreSQL | Business data, profiles, reputation |
+| Invitations | Drizzle/PostgreSQL | Invitation codes, status, expiry |
+| Relationships | Drizzle/PostgreSQL | Member connections (JSONB for flexibility) |
+| Participation | Drizzle/PostgreSQL | Engagement events and metrics |
+| Conversations | ElizaOS Memory | Chat history, facts, context |
+
+### Directory Structure
+
 ```
+plugin-perk-os/
+├── src/
+│   ├── index.ts                 # Plugin exports
+│   ├── plugin.ts                # Main plugin definition with schema
+│   ├── database/
+│   │   └── schema.ts            # Drizzle table definitions (5 tables)
+│   ├── types/
+│   │   └── index.ts             # TypeScript interfaces and enums
+│   ├── actions/                 # ElizaOS Actions (message handlers)
+│   │   └── .gitkeep
+│   ├── services/                # Background services
+│   │   └── .gitkeep
+│   ├── providers/               # Context providers for prompts
+│   │   └── .gitkeep
+│   ├── routes/                  # HTTP API endpoints
+│   │   └── .gitkeep
+│   ├── utils/                   # Shared utilities
+│   │   └── .gitkeep
+│   ├── frontend/                # React UI components
+│   │   ├── index.tsx
+│   │   ├── index.css
+│   │   └── utils.ts
+│   └── __tests__/               # Test files
+│       ├── plugin.test.ts
+│       ├── integration.test.ts
+│       └── e2e/
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
+## Database Schema
+
+### Tables
+
+1. **community_invitations** - Invitation codes and tracking
+   - Indexes: code, status, created_by
+
+2. **community_members** - Member profiles with GitHub verification
+   - Indexes: telegram_id, github_username, status, reputation_score
+
+3. **member_relationships** - Member connections (JSONB content)
+   - Indexes: entity_a, entity_b, type
+
+4. **member_participation** - Engagement event tracking
+   - Indexes: member_id, event_type, occurred_at
+
+5. **member_daily_highlights** - Aggregated daily metrics
+   - Indexes: member_id + highlight_date (composite)
+
+### Auto-Migration
+
+The plugin exports a `schema` property that ElizaOS uses for automatic migration:
+
+```typescript
+export const perkOsPlugin: Plugin = {
+  name: 'plugin-perk-os',
+  schema: communityDirectorySchema,  // Auto-migrated on startup
+  // ...
+};
+```
+
+## Type System
+
+All types are exported from `types/index.ts`:
+
+### Enums
+- `InvitationStatus`: pending, accepted, expired, cancelled
+- `MemberStatus`: not_member, pending, active, suspended, banned
+- `MemberRole`: student, developer, designer, researcher, founder, etc.
+- `ReputationTier`: Novice, Contributor, Active Developer, Experienced, Expert
+- `ParticipationEventType`: MESSAGE, REACTION, VOICE, ACTION, JOIN, LEAVE
+- `Platform`: telegram, discord, twitch, kick, github
+- `RelationshipType`: INVITED, MENTORED, COLLABORATED, REFERRED
+
+### Interfaces
+- `CommunityMember` - Full member profile
+- `CommunityInvitation` - Invitation record
+- `MemberRelationship` - Member connections
+- `MemberParticipation` - Engagement events
+- `MemberDailyHighlight` - Daily aggregates
+- `GitHubProfileData` - GitHub API response data
+- `ProfileData` - Additional profile fields
+
+### Helper Functions
+- `getReputationTier(score)` - Convert score to tier
+- `calculateReputationScore(metrics)` - Calculate from GitHub metrics
+
+## Reputation Formula
+
+```
+Score = (public_repos × 5) + (followers × 3) + (total_stars × 2) + (contributions × 1)
+```
+
+| Tier | Score Range |
+|------|-------------|
+| Novice | 0 - 100 |
+| Contributor | 101 - 500 |
+| Active Developer | 501 - 1,000 |
+| Experienced | 1,001 - 2,500 |
+| Expert | 2,501+ |
 
 ## Development
 
+### Prerequisites
+
+- Bun runtime
+- ElizaOS CLI (`elizaos`)
+- PostgreSQL or PGLite (auto-configured)
+
+### Commands
+
 ```bash
-# Start development with hot-reloading (recommended)
-elizaos dev
+# Build the plugin
+bun run build
 
-# OR start without hot-reloading
-elizaos start
-# Note: When using 'start', you need to rebuild after changes:
-# bun run build
+# Run in development mode (from project root)
+cd .. && elizaos dev
 
-# Test the plugin
-elizaos test
+# Type checking
+bun run type-check
+
+# Run tests
+bun test
+
+# Format code
+bun run format
+```
+
+### Plugin Registration
+
+The plugin is registered in `src/character.ts`:
+
+```typescript
+plugins: [
+  "@elizaos/plugin-sql",
+  "plugin-perk-os",  // Package name from dependencies
+  // ...
+],
 ```
 
 ## Testing
 
-ElizaOS uses a dual testing approach that combines Bun's native test runner for component tests with a custom E2E test runner for integration testing within a live ElizaOS runtime.
-
 ### Test Structure
 
 ```
-src/
-  __tests__/              # All tests live inside src
-    *.test.ts            # Component tests (use Bun test runner)
-    e2e/                 # E2E tests (use ElizaOS test runner)
-      *.ts               # E2E test files
-      README.md          # E2E testing documentation
-```
-
-### Two Types of Tests
-
-#### 1. Component Tests (Bun Test Runner)
-
-- **Purpose**: Test individual functions/classes in isolation
-- **Location**: `src/__tests__/*.test.ts`
-- **Runner**: Bun's built-in test runner
-- **Command**: `bun test`
-- **Features**: Fast, isolated, uses mocks
-
-```typescript
-// Example: src/__tests__/plugin.test.ts
-import { describe, it, expect } from 'bun:test';
-import { starterPlugin } from '../plugin';
-
-describe('Plugin Configuration', () => {
-  it('should have correct plugin metadata', () => {
-    expect(starterPlugin.name).toBe('plugin-perk-os');
-  });
-});
-```
-
-#### 2. E2E Tests (ElizaOS Test Runner)
-
-- **Purpose**: Test plugin behavior within a real ElizaOS runtime
-- **Location**: `src/__tests__/e2e/*.ts`
-- **Runner**: ElizaOS custom test runner
-- **Command**: `elizaos test --type e2e`
-- **Features**: Real runtime, real database, full integration
-
-```typescript
-// Example: src/__tests__/e2e/starter-plugin.ts
-import { type TestSuite } from '@elizaos/core';
-
-export const StarterPluginTestSuite: TestSuite = {
-  name: 'plugin_starter_test_suite',
-  tests: [
-    {
-      name: 'hello_world_action_test',
-      fn: async (runtime) => {
-        // Test with real runtime - no mocks needed!
-        const action = runtime.actions.find((a) => a.name === 'HELLO_WORLD');
-        if (!action) {
-          throw new Error('Action not found');
-        }
-        // Test real behavior...
-      },
-    },
-  ],
-};
+src/__tests__/
+├── *.test.ts           # Component tests (Bun test runner)
+├── integration.test.ts # Integration tests
+└── e2e/                # E2E tests (ElizaOS test runner)
+    └── *.ts
 ```
 
 ### Running Tests
 
 ```bash
-# Run all tests (both component and E2E)
-elizaos test
-
-# Run only component tests (fast, for TDD)
+# All tests
 bun test
-# or
-elizaos test --type component
 
-# Run only E2E tests (slower, full integration)
-elizaos test --type e2e
+# Component tests only
+bun run test:component
+
+# E2E tests
+bun run test:e2e
 ```
 
-### Key Differences
+## Roadmap
 
-| Aspect          | Component Tests      | E2E Tests               |
-| --------------- | -------------------- | ----------------------- |
-| **Runner**      | Bun test             | ElizaOS TestRunner      |
-| **Environment** | Mocked               | Real runtime            |
-| **Database**    | Mocked               | Real (PGLite)           |
-| **Speed**       | Fast (ms)            | Slower (seconds)        |
-| **Use Case**    | TDD, component logic | Integration, user flows |
+### Sprint 1: Foundation (Current)
+- [x] CD-101: Database Migrations
+- [x] CD-102: Plugin Structure
+- [ ] CD-103: InvitationService
+- [ ] CD-104: Telegram /invite Command
+- [ ] CD-105: Web UI Invitations
+- [ ] CD-106: Expiration Cron
 
-### E2E Test Integration
+### Sprint 2: Registration & Verification
+- [ ] CD-201: Registration State Machine
+- [ ] CD-202: GitHubVerificationService
+- [ ] CD-203: ReputationService
+- [ ] CD-204: Member Profile Creation
 
-E2E tests are integrated into your plugin by:
+### Sprint 3: Directory & Admin
+- [ ] CD-301: DirectoryService
+- [ ] CD-302: Directory Web UI
+- [ ] CD-304: ParticipationTrackingService
 
-1. **Creating the test suite** in `src/__tests__/e2e/`
-2. **Importing directly** in your plugin definition:
+## Related Documentation
 
-```typescript
-// src/plugin.ts
-import { StarterPluginTestSuite } from './__tests__/e2e/starter-plugin';
+- [Epic 1 Implementation Plan](../docs/specs/EPIC_1_IMPLEMENTATION_PLAN.md)
+- [Architecture Recommendation](../docs/specs/ARCHITECTURE_RECOMMENDATION.md)
+- [Community Directory Spec](../docs/COMMUNITY_DIRECTORY_SPEC.md)
+- [ElizaOS Plugin Guide](https://elizaos.github.io/eliza/docs/core/plugins/)
 
-export const starterPlugin: Plugin = {
-  name: 'plugin-perk-os',
-  // ... other properties
-  tests: [StarterPluginTestSuite], // Direct import, no tests.ts needed
-};
-```
+## License
 
-### Writing Effective E2E Tests
-
-E2E tests receive a real `IAgentRuntime` instance, allowing you to:
-
-- Access real actions, providers, and services
-- Interact with the actual database
-- Test complete user scenarios
-- Validate plugin behavior in production-like conditions
-
-```typescript
-{
-  name: 'service_lifecycle_test',
-  fn: async (runtime) => {
-    // Get the real service
-    const service = runtime.getService('starter');
-    if (!service) {
-      throw new Error('Service not initialized');
-    }
-
-    // Test real behavior
-    await service.stop();
-    // Verify cleanup happened...
-  },
-}
-```
-
-### Best Practices
-
-1. **Use Component Tests for**:
-
-   - Algorithm logic
-   - Data transformations
-   - Input validation
-   - Error handling
-
-2. **Use E2E Tests for**:
-
-   - User scenarios
-   - Action execution flows
-   - Provider data integration
-   - Service lifecycle
-   - Plugin interactions
-
-3. **Test Organization**:
-   - Keep related tests together
-   - Use descriptive test names
-   - Include failure scenarios
-   - Document complex test setups
-
-The comprehensive E2E test documentation in `src/__tests__/e2e/README.md` provides detailed examples and patterns for writing effective tests.
-
-## Publishing & Continuous Development
-
-### Initial Setup
-
-Before publishing your plugin, ensure you meet these requirements:
-
-1. **npm Authentication**
-
-   ```bash
-   npm login
-   ```
-
-2. **GitHub Repository**
-
-   - Create a public GitHub repository for this plugin
-   - Add the 'elizaos-plugins' topic to the repository
-   - Use 'main' as the default branch
-
-3. **Required Assets**
-   - Add images to the `images/` directory:
-     - `logo.jpg` (400x400px square, <500KB)
-     - `banner.jpg` (1280x640px, <1MB)
-
-### Initial Publishing
-
-```bash
-# Test your plugin meets all requirements
-elizaos publish --test
-
-# Publish to npm + GitHub + registry (recommended)
-elizaos publish
-```
-
-This command will:
-
-- Publish your plugin to npm for easy installation
-- Create/update your GitHub repository
-- Submit your plugin to the ElizaOS registry for discoverability
-
-### Continuous Development & Updates
-
-**Important**: After your initial publish with `elizaos publish`, all future updates should be done using standard npm and git workflows, not the ElizaOS CLI.
-
-#### Standard Update Workflow
-
-1. **Make Changes**
-
-   ```bash
-   # Edit your plugin code
-   elizaos dev  # Test locally with hot-reload
-   ```
-
-2. **Test Your Changes**
-
-   ```bash
-   # Run all tests
-   elizaos test
-
-   # Run specific test types if needed
-   elizaos test component  # Component tests only
-   elizaos test e2e       # E2E tests only
-   ```
-
-3. **Update Version**
-
-   ```bash
-   # Patch version (bug fixes): 1.0.0 → 1.0.1
-   npm version patch
-
-   # Minor version (new features): 1.0.1 → 1.1.0
-   npm version minor
-
-   # Major version (breaking changes): 1.1.0 → 2.0.0
-   npm version major
-   ```
-
-4. **Publish to npm**
-
-   ```bash
-   npm publish
-   ```
-
-5. **Push to GitHub**
-   ```bash
-   git push origin main
-   git push --tags  # Push version tags
-   ```
-
-#### Why Use Standard Workflows?
-
-- **npm publish**: Directly updates your package on npm registry
-- **git push**: Updates your GitHub repository with latest code
-- **Automatic registry updates**: The ElizaOS registry automatically syncs with npm, so no manual registry updates needed
-- **Standard tooling**: Uses familiar npm/git commands that work with all development tools
-
-### Alternative Publishing Options (Initial Only)
-
-```bash
-# Publish to npm only (skip GitHub and registry)
-elizaos publish --npm
-
-# Publish but skip registry submission
-elizaos publish --skip-registry
-
-# Generate registry files locally without publishing
-elizaos publish --dry-run
-```
-
-## Configuration
-
-The `agentConfig` section in `package.json` defines the parameters your plugin requires:
-
-```json
-"agentConfig": {
-  "pluginType": "elizaos:plugin:1.0.0",
-  "pluginParameters": {
-    "API_KEY": {
-      "type": "string",
-      "description": "API key for the service"
-    }
-  }
-}
-```
-
-Customize this section to match your plugin's requirements.
-
-## Documentation
-
-Provide clear documentation about:
-
-- What your plugin does
-- How to use it
-- Required API keys or credentials
-- Example usage
-- Version history and changelog
+UNLICENSED - Private repository
