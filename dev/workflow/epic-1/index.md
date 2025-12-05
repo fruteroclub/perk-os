@@ -1,7 +1,7 @@
 # Epic 1: Community Directory
 
 **Epic ID**: EPIC-001
-**Status**: =2 Not Started
+**Status**: ðŸ”„ In Progress
 **Timeline**: 6 weeks (3 sprints)
 **Total Story Points**: 76
 **Team Size**: 2-3 developers
@@ -9,7 +9,7 @@
 
 ---
 
-## =Ë Epic Overview
+## =ï¿½ Epic Overview
 
 Build a conversational member directory system with GitHub verification, reputation scoring, and invitation management. Features include Telegram-based registration flow, web directory with search/filtering, and participation tracking.
 
@@ -27,16 +27,16 @@ Build a conversational member directory system with GitHub verification, reputat
 
 ---
 
-## <¯ Sprint Breakdown
+## <ï¿½ Sprint Breakdown
 
 ### Sprint 1: Foundation (Weeks 1-2)
 **Goal**: Database setup and invitation system
 **Story Points**: 21
-**Status**: =2 Not Started
+**Status**: ðŸ”„ In Progress
 
 | Ticket | Title | Points | Status | Assignee |
 |--------|-------|--------|--------|----------|
-| CD-101 | Database Migrations | 5 | =2 | Unassigned |
+| CD-101 | Database Migrations | 5 | âœ… | Claude Code |
 | CD-102 | Plugin Structure | 3 | =2 | Unassigned |
 | CD-103 | InvitationService | 5 | =2 | Unassigned |
 | CD-104 | Telegram /invite Command | 3 | =2 | Unassigned |
@@ -78,18 +78,18 @@ Build a conversational member directory system with GitHub verification, reputat
 
 ---
 
-## =Ê Ticket Status Board
+## =ï¿½ Ticket Status Board
 
-### =2 Not Started (21 tickets)
-CD-101, CD-102, CD-103, CD-104, CD-105, CD-106, CD-201, CD-202, CD-203, CD-204, CD-205, CD-206, CD-207, CD-208, CD-301, CD-302, CD-303, CD-304, CD-305, CD-306, CD-307, CD-308, CD-309
+### =2 Not Started (20 tickets)
+CD-102, CD-103, CD-104, CD-105, CD-106, CD-201, CD-202, CD-203, CD-204, CD-205, CD-206, CD-207, CD-208, CD-301, CD-302, CD-303, CD-304, CD-305, CD-306, CD-307, CD-308, CD-309
 
 ### = In Progress (0 tickets)
 _None_
 
-###  Completed (0 tickets)
-_None_
+### âœ… Completed (1 ticket)
+CD-101
 
-###   Blocked (0 tickets)
+### ï¿½ Blocked (0 tickets)
 _None_
 
 ---
@@ -99,66 +99,66 @@ _None_
 ### Critical Path (Must Complete in Order)
 ```
 CD-101 (Database)
-  “
+  ï¿½
 CD-102 (Plugin Structure)
-  “
+  ï¿½
 CD-103 (InvitationService)
-  “
+  ï¿½
 CD-201 (Registration Flow)
-  “
+  ï¿½
 CD-202 (GitHub Verification)
-  “
+  ï¿½
 CD-204 (Profile Creation)
-  “
+  ï¿½
 CD-301 (DirectoryService)
-  “
+  ï¿½
 CD-302 (Directory UI)
 ```
 
 ### Parallel Tracks
 
 **Track 1: Invitation System**
-- CD-103 ’ CD-104 (Telegram Command)
-- CD-103 ’ CD-105 (Web UI)
-- CD-103 ’ CD-106 (Cron Job)
+- CD-103 ï¿½ CD-104 (Telegram Command)
+- CD-103 ï¿½ CD-105 (Web UI)
+- CD-103 ï¿½ CD-106 (Cron Job)
 
 **Track 2: GitHub Integration**
-- CD-202 ’ CD-205 (API Utilities)
-- CD-202 ’ CD-203 (Reputation Service)
+- CD-202 ï¿½ CD-205 (API Utilities)
+- CD-202 ï¿½ CD-203 (Reputation Service)
 
 **Track 3: Member Features**
-- CD-204 ’ CD-206 (Profile Edit)
-- CD-204 ’ CD-207 (Welcome Message)
+- CD-204 ï¿½ CD-206 (Profile Edit)
+- CD-204 ï¿½ CD-207 (Welcome Message)
 
 **Track 4: Directory**
-- CD-301 ’ CD-302 (Web UI)
-- CD-301 ’ CD-303 (Pagination)
-- CD-301 ’ CD-307 (Manager Interface)
-- CD-301 ’ CD-308 (Profile Pages)
+- CD-301 ï¿½ CD-302 (Web UI)
+- CD-301 ï¿½ CD-303 (Pagination)
+- CD-301 ï¿½ CD-307 (Manager Interface)
+- CD-301 ï¿½ CD-308 (Profile Pages)
 
 **Track 5: Participation**
-- CD-304 ’ CD-305 (Serena MCP)
-- CD-304 ’ CD-306 (Listener)
+- CD-304 ï¿½ CD-305 (Serena MCP)
+- CD-304 ï¿½ CD-306 (Listener)
 
 ---
 
-## =È Velocity Tracking
+## =ï¿½ Velocity Tracking
 
 ### Sprint Metrics
 
 | Sprint | Planned Points | Completed Points | Velocity | Status |
 |--------|----------------|------------------|----------|--------|
-| Sprint 1 | 21 | 0 | 0% | =2 Not Started |
+| Sprint 1 | 21 | 5 | 24% | ðŸ”„ In Progress |
 | Sprint 2 | 27 | 0 | 0% | =2 Not Started |
 | Sprint 3 | 28 | 0 | 0% | =2 Not Started |
-| **Total** | **76** | **0** | **0%** | **=2 Not Started** |
+| **Total** | **76** | **5** | **7%** | **ðŸ”„ In Progress** |
 
 ### Daily Burndown (Sprint 1)
 _Track story points completed per day once sprint starts_
 
 ```
-Day 1:  [ 21 points remaining ]
-Day 2:  [ __ points remaining ]
+Day 1:  [ 21 points remaining ] - CD-101 completed (5 points)
+Day 2:  [ 16 points remaining ]
 Day 3:  [ __ points remaining ]
 Day 4:  [ __ points remaining ]
 Day 5:  [ __ points remaining ]
@@ -171,7 +171,7 @@ Day 10: [ __ points remaining ]
 
 ---
 
-## <¯ Definition of Done
+## <ï¿½ Definition of Done
 
 ### Per Ticket
 - [ ] Code written following project style guide
@@ -197,7 +197,7 @@ Day 10: [ __ points remaining ]
 
 ---
 
-## =¨ Risk Register
+## =ï¿½ Risk Register
 
 ### Active Risks
 
@@ -211,7 +211,7 @@ Day 10: [ __ points remaining ]
 
 ---
 
-## =Ú Key Resources
+## =ï¿½ Key Resources
 
 ### Documentation
 - [Epic 1 Implementation Plan](../../docs/specs/EPIC_1_IMPLEMENTATION_PLAN.md)
@@ -231,7 +231,7 @@ Day 10: [ __ points remaining ]
 
 ---
 
-## <‰ Success Criteria
+## <ï¿½ Success Criteria
 
 ### Sprint 1 Success
 - [ ] Managers can create invitations via Telegram and web UI
@@ -287,7 +287,7 @@ Day 10: [ __ points remaining ]
 
 ---
 
-## =Ý Quick Navigation
+## =ï¿½ Quick Navigation
 
 ### Sprint 1 Tickets
 - [CD-101: Database Migrations](sprint-1/CD-101.md)
@@ -320,5 +320,5 @@ Day 10: [ __ points remaining ]
 
 ---
 
-**Last Updated**: 2024-12-05
+**Last Updated**: 2025-12-05
 **Next Review**: End of Sprint 1
