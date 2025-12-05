@@ -46,7 +46,6 @@ tmp/
 temp/
 
 # Developer documents
-dev/
 .claude/
 .serena/
 

@@ -1,0 +1,304 @@
+# ElizaOS Documentation
+
+## Docs
+
+- [Character Interface](https://docs.elizaos.ai/agents/character-interface.md): Complete guide to the Character configuration structure in elizaOS
+- [Memory and State](https://docs.elizaos.ai/agents/memory-and-state.md): Understanding agent memory, context, and state management in elizaOS
+- [Personality and Behavior](https://docs.elizaos.ai/agents/personality-and-behavior.md): Crafting unique agent personalities and behavioral patterns in elizaOS
+- [Runtime and Lifecycle](https://docs.elizaos.ai/agents/runtime-and-lifecycle.md): From Character configuration to live Agent execution in elizaOS
+- [Agent Command](https://docs.elizaos.ai/cli-reference/agent.md): Managing elizaOS agents through the CLI - list, configure, start, stop, and update agents
+- [Create Command](https://docs.elizaos.ai/cli-reference/create.md): Initialize a new project, plugin, or agent with an interactive setup process
+- [Development Mode](https://docs.elizaos.ai/cli-reference/dev.md): Run elizaOS projects in development mode with hot reloading and debugging
+- [Environment Configuration](https://docs.elizaos.ai/cli-reference/env.md): Configure environment variables and API keys for elizaOS projects
+- [Monorepo Command](https://docs.elizaos.ai/cli-reference/monorepo.md): Clone the elizaOS monorepo for development or contribution
+- [elizaOS CLI Overview](https://docs.elizaos.ai/cli-reference/overview.md): Comprehensive guide to the elizaOS Command Line Interface (CLI) tools and commands
+- [Plugin Management](https://docs.elizaos.ai/cli-reference/plugins.md): Manage elizaOS plugins within a project - list, add, remove
+- [Publish Command](https://docs.elizaos.ai/cli-reference/publish.md): Publish a plugin to npm, create a GitHub repository, and submit to the elizaOS registry
+- [Start Command](https://docs.elizaos.ai/cli-reference/start.md): Launch and manage elizaOS projects and agents in production mode
+- [TEE Command](https://docs.elizaos.ai/cli-reference/tee.md): Manage TEE deployments on elizaOS
+- [Test Command](https://docs.elizaos.ai/cli-reference/test.md): Run and manage tests for elizaOS projects and plugins
+- [Update Command](https://docs.elizaos.ai/cli-reference/update.md): Update your project's elizaOS dependencies and CLI to the latest published versions
+- [Add Multiple Agents](https://docs.elizaos.ai/guides/add-multiple-agents.md): Build and coordinate multiple specialized agents working together as a team
+- [Contribute to Core](https://docs.elizaos.ai/guides/contribute-to-core.md): How to contribute to the elizaOS core project and plugin ecosystem
+- [Create a Plugin](https://docs.elizaos.ai/guides/create-a-plugin.md): Build a generative AI plugin from scratch using progressive plugin development
+- [Customize an Agent](https://docs.elizaos.ai/guides/customize-an-agent.md): As a jumping-off point, we will create a custom Shakespeare elizaOS agent with a custom personality and Discord integration
+- [Deploy a Project](https://docs.elizaos.ai/guides/deploy-a-project.md): Deploy your elizaOS project to production with managed or self-hosted options
+- [Publish a Plugin](https://docs.elizaos.ai/guides/publish-a-plugin.md): Publish your elizaOS plugin to the elizaOS registry
+- [Test a Project](https://docs.elizaos.ai/guides/test-a-project.md): Write tests for your multi-agent elizaOS project
+- [Overview](https://docs.elizaos.ai/index.md): Build autonomous AI agents with the most popular agentic framework
+- [Installation](https://docs.elizaos.ai/installation.md): Install elizaOS on macOS, Linux, or Windows
+- [Launch Resources](https://docs.elizaos.ai/launch-resources/index.md): Tools and support to grow your elizaOS project
+- [Message Processing Core](https://docs.elizaos.ai/plugin-registry/bootstrap.md): Comprehensive documentation for @elizaos/plugin-bootstrap - the core message handler and event system for elizaOS agents
+- [Complete Developer Guide](https://docs.elizaos.ai/plugin-registry/bootstrap/complete-documentation.md): Comprehensive technical documentation for the bootstrap plugin's architecture, components, and implementation
+- [Implementation Examples](https://docs.elizaos.ai/plugin-registry/bootstrap/examples.md): Practical examples and recipes for building agents with the bootstrap plugin
+- [Message Processing Flow](https://docs.elizaos.ai/plugin-registry/bootstrap/message-flow.md): Step-by-step breakdown of how messages flow through the bootstrap plugin system
+- [Testing Guide](https://docs.elizaos.ai/plugin-registry/bootstrap/testing-guide.md): Testing patterns and best practices for the bootstrap plugin
+- [Overview](https://docs.elizaos.ai/plugin-registry/defi/evm.md): Integrate EVM blockchain capabilities into your AI agent
+- [Developer Guide](https://docs.elizaos.ai/plugin-registry/defi/evm/complete-documentation.md): Comprehensive guide to the EVM plugin architecture, implementation, and usage
+- [Operations Flow](https://docs.elizaos.ai/plugin-registry/defi/evm/defi-operations-flow.md): How DeFi operations work in the EVM plugin
+- [Examples](https://docs.elizaos.ai/plugin-registry/defi/evm/examples.md): Practical examples for configuring and using the EVM plugin
+- [Testing Guide](https://docs.elizaos.ai/plugin-registry/defi/evm/testing-guide.md): How to test the EVM plugin safely on real networks
+- [Overview](https://docs.elizaos.ai/plugin-registry/defi/solana.md): Enable high-performance Solana blockchain interactions for your AI agent
+- [Developer Guide](https://docs.elizaos.ai/plugin-registry/defi/solana/complete-documentation.md): In-depth technical documentation for the Solana blockchain plugin
+- [Operations Flow](https://docs.elizaos.ai/plugin-registry/defi/solana/defi-operations-flow.md): How DeFi operations work in the Solana plugin
+- [Examples](https://docs.elizaos.ai/plugin-registry/defi/solana/examples.md): Practical examples for configuring and using the Solana plugin
+- [Testing Guide](https://docs.elizaos.ai/plugin-registry/defi/solana/testing-guide.md): How to test the Solana plugin safely on mainnet
+- [Knowledge & RAG System](https://docs.elizaos.ai/plugin-registry/knowledge.md): The core RAG (Retrieval-Augmented Generation) system for elizaOS agents
+- [Architecture & Flow Diagrams](https://docs.elizaos.ai/plugin-registry/knowledge/architecture-flow.md): Visual guide to the Knowledge plugin's internal architecture and data flows
+- [Complete Developer Guide](https://docs.elizaos.ai/plugin-registry/knowledge/complete-documentation.md): Comprehensive technical reference for the Knowledge plugin
+- [Contextual Embeddings](https://docs.elizaos.ai/plugin-registry/knowledge/contextual-embeddings.md): Enhanced retrieval accuracy using Anthropic's contextual retrieval technique
+- [Examples & Recipes](https://docs.elizaos.ai/plugin-registry/knowledge/examples.md): Practical examples and code recipes for the Knowledge plugin
+- [Quick Start Guide](https://docs.elizaos.ai/plugin-registry/knowledge/quick-start.md): Get up and running with the Knowledge Plugin in 5 minutes
+- [Language Model Configuration](https://docs.elizaos.ai/plugin-registry/llm.md): Understanding and configuring Language Model plugins in elizaOS
+- [Anthropic Plugin](https://docs.elizaos.ai/plugin-registry/llm/anthropic.md): Claude models integration for elizaOS
+- [Google GenAI Plugin](https://docs.elizaos.ai/plugin-registry/llm/google-genai.md): Google Gemini models integration for elizaOS
+- [Ollama Plugin](https://docs.elizaos.ai/plugin-registry/llm/ollama.md): Local model execution via Ollama for elizaOS
+- [OpenAI Plugin](https://docs.elizaos.ai/plugin-registry/llm/openai.md): OpenAI GPT models integration for elizaOS
+- [OpenRouter Plugin](https://docs.elizaos.ai/plugin-registry/llm/openrouter.md): Multi-provider LLM access through OpenRouter
+- [Plugin System Overview](https://docs.elizaos.ai/plugin-registry/overview.md): Comprehensive guide to the elizaOS plugin system architecture and implementation
+- [Discord Integration](https://docs.elizaos.ai/plugin-registry/platform/discord.md): Welcome to the comprehensive documentation for the @elizaos/plugin-discord package. This index provides organized access to all documentation resources.
+- [Developer Guide](https://docs.elizaos.ai/plugin-registry/platform/discord/developer-guide.md): Comprehensive Discord integration for elizaOS agents. It enables agents to operate as fully-featured Discord bots with advanced features and capabilities.
+- [Event Flow](https://docs.elizaos.ai/plugin-registry/platform/discord/event-flow.md): This document provides a comprehensive breakdown of how events flow through the Discord plugin system.
+- [Examples](https://docs.elizaos.ai/plugin-registry/platform/discord/examples.md): This document provides practical examples of using the @elizaos/plugin-discord package in various scenarios.
+- [Testing Guide](https://docs.elizaos.ai/plugin-registry/platform/discord/testing-guide.md): This guide covers testing strategies, patterns, and best practices for the @elizaos/plugin-discord package.
+- [Farcaster Integration](https://docs.elizaos.ai/plugin-registry/platform/farcaster.md): Welcome to the comprehensive documentation for the @elizaos/plugin-farcaster package. This index provides organized access to all documentation resources.
+- [Cast Flow](https://docs.elizaos.ai/plugin-registry/platform/farcaster/cast-flow.md): Visual guide to understanding how the Farcaster plugin processes casts and interactions
+- [Developer Guide](https://docs.elizaos.ai/plugin-registry/platform/farcaster/developer-guide.md): Comprehensive technical reference for the @elizaos/plugin-farcaster package
+- [Examples](https://docs.elizaos.ai/plugin-registry/platform/farcaster/examples.md): Practical implementation examples for the @elizaos/plugin-farcaster package
+- [Testing Guide](https://docs.elizaos.ai/plugin-registry/platform/farcaster/testing-guide.md): Comprehensive testing strategies and patterns for the @elizaos/plugin-farcaster package
+- [Telegram Integration](https://docs.elizaos.ai/plugin-registry/platform/telegram.md): Welcome to the comprehensive documentation for the @elizaos/plugin-telegram package. This index provides organized access to all documentation resources.
+- [Developer Guide](https://docs.elizaos.ai/plugin-registry/platform/telegram/developer-guide.md): Comprehensive Telegram Bot API integration for elizaOS agents. It enables agents to operate as Telegram bots with advanced features and capabilities.
+- [Examples](https://docs.elizaos.ai/plugin-registry/platform/telegram/examples.md): This document provides practical examples of using the @elizaos/plugin-telegram package in various scenarios.
+- [Message Flow](https://docs.elizaos.ai/plugin-registry/platform/telegram/message-flow.md): This document provides a comprehensive breakdown of how messages flow through the Telegram plugin system.
+- [Testing Guide](https://docs.elizaos.ai/plugin-registry/platform/telegram/testing-guide.md): Testing strategies, patterns, and best practices for the Telegram plugin package.
+- [Twitter/X Integration](https://docs.elizaos.ai/plugin-registry/platform/twitter.md): Welcome to the comprehensive documentation for the @elizaos/plugin-twitter package. This index provides organized access to all documentation resources.
+- [Developer Guide](https://docs.elizaos.ai/plugin-registry/platform/twitter/developer-guide.md): Comprehensive Twitter/X API v2 integration for elizaOS agents. It enables agents to operate as fully autonomous Twitter bots with advanced capabilities.
+- [Examples](https://docs.elizaos.ai/plugin-registry/platform/twitter/examples.md): This document provides practical examples of using the @elizaos/plugin-twitter package in various scenarios.
+- [Testing Guide](https://docs.elizaos.ai/plugin-registry/platform/twitter/testing-guide.md): This guide covers testing strategies, patterns, and best practices for the @elizaos/plugin-twitter package.
+- [Timeline Flow](https://docs.elizaos.ai/plugin-registry/platform/twitter/timeline-flow.md): This document provides a comprehensive breakdown of how the Twitter plugin processes timeline data and generates interactions.
+- [Plugin Registry](https://docs.elizaos.ai/plugin-registry/registry.md): Browse the complete collection of available elizaOS plugins. This registry is updated in real-time with the latest 1.x compatible plugins from the community.
+- [Database Management](https://docs.elizaos.ai/plugin-registry/sql.md): Database integration and management for elizaOS
+- [Database Adapters](https://docs.elizaos.ai/plugin-registry/sql/database-adapters.md): Understanding PGLite and PostgreSQL adapters in the SQL plugin
+- [Examples](https://docs.elizaos.ai/plugin-registry/sql/examples.md): Practical code examples and patterns
+- [Plugin Tables Guide](https://docs.elizaos.ai/plugin-registry/sql/plugin-tables.md): How plugins can define their own database tables
+- [Schema Management](https://docs.elizaos.ai/plugin-registry/sql/schema-management.md): Dynamic schema management and migrations in the SQL plugin
+- [Architecture](https://docs.elizaos.ai/plugins/architecture.md): Core plugin system architecture and lifecycle in elizaOS
+- [Components](https://docs.elizaos.ai/plugins/components.md): Actions, Providers, Evaluators, and Services - the building blocks of elizaOS plugins
+- [Development](https://docs.elizaos.ai/plugins/development.md): Creating, building, and testing elizaOS plugins
+- [Migration](https://docs.elizaos.ai/plugins/migration.md): Complete guide for migrating elizaOS plugins from version 0.x to 1.x
+- [Patterns](https://docs.elizaos.ai/plugins/patterns.md): Action chaining, callbacks, composition, and advanced implementation patterns
+- [Reference](https://docs.elizaos.ai/plugins/reference.md): Complete TypeScript interface reference for elizaOS plugins
+- [Database Schema](https://docs.elizaos.ai/plugins/schemas.md): Learn how to add custom database schemas to elizaOS plugins for shared data access
+- [Webhooks and Routes](https://docs.elizaos.ai/plugins/webhooks-and-routes.md): How to expose HTTP endpoints and send messages as agents using plugin routes
+- [Environment Variables](https://docs.elizaos.ai/projects/environment-variables.md): Server configuration environment variables for ElizaOS
+- [Overview](https://docs.elizaos.ai/projects/overview.md): Understanding and building with elizaOS projects
+- [Quickstart](https://docs.elizaos.ai/quickstart.md): Create and run your first elizaOS agent in 3 minutes
+- [Create a New Agent](https://docs.elizaos.ai/rest-reference/agents/create-a-new-agent.md): Create a new AI agent with custom configuration and capabilities
+- [Create a world for an agent](https://docs.elizaos.ai/rest-reference/agents/create-a-world-for-an-agent.md): Create a new world for a specific agent
+- [Delete an agent](https://docs.elizaos.ai/rest-reference/agents/delete-an-agent.md): Permanently deletes an agent
+- [Get Agent Details](https://docs.elizaos.ai/rest-reference/agents/get-agent-details.md): Retrieve detailed information about a specific agent by ID
+- [Get agent panels](https://docs.elizaos.ai/rest-reference/agents/get-agent-panels.md): Get public UI panels available for this agent from its plugins
+- [Get all worlds](https://docs.elizaos.ai/rest-reference/agents/get-all-worlds.md): Get all worlds across all agents
+- [List All Agents](https://docs.elizaos.ai/rest-reference/agents/list-all-agents.md): Retrieve a list of all agents in the system with their details and status
+- [Start an agent](https://docs.elizaos.ai/rest-reference/agents/start-an-agent.md): Starts an existing agent
+- [Stop an agent](https://docs.elizaos.ai/rest-reference/agents/stop-an-agent.md): Stops a running agent
+- [Update a world](https://docs.elizaos.ai/rest-reference/agents/update-a-world.md): Update world properties
+- [Update agent](https://docs.elizaos.ai/rest-reference/agents/update-agent.md): Update an existing agent
+- [Convert conversation to speech](https://docs.elizaos.ai/rest-reference/audio/convert-conversation-to-speech.md): Convert a conversation (multiple messages) to speech
+- [Generate speech from text](https://docs.elizaos.ai/rest-reference/audio/generate-speech-from-text.md): Generate speech audio from text using agent's voice settings
+- [Process audio message](https://docs.elizaos.ai/rest-reference/audio/process-audio-message.md): Process an audio message - transcribe and get agent response
+- [Synthesize speech from text](https://docs.elizaos.ai/rest-reference/audio/synthesize-speech-from-text.md): Convert text to speech using agent's voice settings
+- [Transcribe audio](https://docs.elizaos.ai/rest-reference/audio/transcribe-audio.md): Transcribe audio file to text
+- [Clear system logs](https://docs.elizaos.ai/rest-reference/logs/clear-system-logs.md): Clear all system logs
+- [Delete a specific log entry](https://docs.elizaos.ai/rest-reference/logs/delete-a-specific-log-entry.md): Delete a specific log entry for an agent
+- [Get agent logs](https://docs.elizaos.ai/rest-reference/logs/get-agent-logs.md): Retrieve logs for a specific agent
+- [Get system logs](https://docs.elizaos.ai/rest-reference/logs/get-system-logs.md): Retrieve system logs with optional filtering
+- [Get system logs (POST)](https://docs.elizaos.ai/rest-reference/logs/get-system-logs-post.md): Retrieve system logs with optional filtering using POST method
+- [Upload media for agent](https://docs.elizaos.ai/rest-reference/media/upload-media-for-agent.md): Upload image or video media for an agent
+- [Upload media to channel](https://docs.elizaos.ai/rest-reference/media/upload-media-to-channel.md): Upload media file to a specific channel
+- [Create a room](https://docs.elizaos.ai/rest-reference/memory/create-a-room.md): Create a new room for an agent
+- [Delete all agent memories](https://docs.elizaos.ai/rest-reference/memory/delete-all-agent-memories.md): Delete all memories for a specific agent
+- [Delete all memories for a room](https://docs.elizaos.ai/rest-reference/memory/delete-all-memories-for-a-room.md): Delete all memories for a specific room
+- [Get agent memories](https://docs.elizaos.ai/rest-reference/memory/get-agent-memories.md): Retrieve all memories for a specific agent
+- [Get room memories](https://docs.elizaos.ai/rest-reference/memory/get-room-memories.md): Retrieves memories for a specific room
+- [Update a memory](https://docs.elizaos.ai/rest-reference/memory/update-a-memory.md): Update a specific memory for an agent
+- [Add agent to channel](https://docs.elizaos.ai/rest-reference/messaging/add-agent-to-channel.md): Add an agent to a specific channel
+- [Add agent to server](https://docs.elizaos.ai/rest-reference/messaging/add-agent-to-server.md): Add an agent to a server
+- [Create central channel](https://docs.elizaos.ai/rest-reference/messaging/create-central-channel.md): Create a channel in the central database
+- [Create channel](https://docs.elizaos.ai/rest-reference/messaging/create-channel.md): Create a new channel
+- [Create group channel](https://docs.elizaos.ai/rest-reference/messaging/create-group-channel.md): Create a group channel with multiple participants
+- [Create server](https://docs.elizaos.ai/rest-reference/messaging/create-server.md): Create a new server
+- [Create Session](https://docs.elizaos.ai/rest-reference/messaging/create-session.md): Create a new conversation session with an agent with configurable timeout and renewal policies
+- [Delete all channel messages](https://docs.elizaos.ai/rest-reference/messaging/delete-all-channel-messages.md): Delete all messages in a channel
+- [Delete all channel messages by user](https://docs.elizaos.ai/rest-reference/messaging/delete-all-channel-messages-by-user.md): Delete all messages by a specific user in a channel
+- [Delete channel](https://docs.elizaos.ai/rest-reference/messaging/delete-channel.md): Delete a channel
+- [Delete channel message](https://docs.elizaos.ai/rest-reference/messaging/delete-channel-message.md): Delete a specific message from a channel
+- [End Session](https://docs.elizaos.ai/rest-reference/messaging/end-session.md): Explicitly end and delete a conversation session
+- [Get central server channels](https://docs.elizaos.ai/rest-reference/messaging/get-central-server-channels.md): Get all channels for a server from central database
+- [Get central servers](https://docs.elizaos.ai/rest-reference/messaging/get-central-servers.md): Get all servers from central database
+- [Get channel details](https://docs.elizaos.ai/rest-reference/messaging/get-channel-details.md): Get details for a specific channel
+- [Get channel info](https://docs.elizaos.ai/rest-reference/messaging/get-channel-info.md): Get basic information for a specific channel (alias for details)
+- [Get channel messages](https://docs.elizaos.ai/rest-reference/messaging/get-channel-messages.md): Get messages for a channel
+- [Get channel participants](https://docs.elizaos.ai/rest-reference/messaging/get-channel-participants.md): Get all participants in a channel
+- [Get or create DM channel](https://docs.elizaos.ai/rest-reference/messaging/get-or-create-dm-channel.md): Get or create a direct message channel between users
+- [Get server agents](https://docs.elizaos.ai/rest-reference/messaging/get-server-agents.md): Get all agents for a server
+- [Get server channels](https://docs.elizaos.ai/rest-reference/messaging/get-server-channels.md): Get all channels for a server
+- [Get Session](https://docs.elizaos.ai/rest-reference/messaging/get-session.md): Retrieve session details, status, and remaining time
+- [Get Session Messages](https://docs.elizaos.ai/rest-reference/messaging/get-session-messages.md): Retrieve messages from a conversation session with cursor-based pagination
+- [Ingest messages from external platforms](https://docs.elizaos.ai/rest-reference/messaging/ingest-messages-from-external-platforms.md): Ingest messages from external platforms (Discord, Telegram, etc.) into the central
+messaging system. This endpoint handles messages from external sources and routes
+them to the appropriate agents through the central message bus.
+
+- [List Sessions](https://docs.elizaos.ai/rest-reference/messaging/list-sessions.md): List all active sessions (admin endpoint)
+- [Mark message processing as complete](https://docs.elizaos.ai/rest-reference/messaging/mark-message-processing-as-complete.md): Notify the system that an agent has finished processing a message. This is used
+to signal completion of agent responses and update the message state.
+
+- [Process external message](https://docs.elizaos.ai/rest-reference/messaging/process-external-message.md): Process a message from an external platform
+- [Remove agent from server](https://docs.elizaos.ai/rest-reference/messaging/remove-agent-from-server.md): Remove an agent from a server
+- [Renew Session](https://docs.elizaos.ai/rest-reference/messaging/renew-session.md): Manually renew a session to extend its expiration time
+- [Send message to channel](https://docs.elizaos.ai/rest-reference/messaging/send-message-to-channel.md): Send a message to a channel
+- [Send Session Message](https://docs.elizaos.ai/rest-reference/messaging/send-session-message.md): Send a message to a conversation session with automatic renewal tracking
+- [Session Heartbeat](https://docs.elizaos.ai/rest-reference/messaging/session-heartbeat.md): Send a heartbeat to keep a session alive and optionally renew it
+- [Sessions Health Check](https://docs.elizaos.ai/rest-reference/messaging/sessions-health-check.md): Check the health status of the sessions service and get active session statistics
+- [Submit a message to the central messaging system](https://docs.elizaos.ai/rest-reference/messaging/submit-a-message-to-the-central-messaging-system.md): Submit a message to the central messaging bus for agent processing. This is the primary endpoint
+for sending messages to agents, replacing the deprecated agent-specific message endpoints.
+
+The message is submitted to a central channel and the appropriate agent(s) will process it
+based on the channel and room configuration. This architecture allows for multi-agent
+conversations and better message routing.
+
+**Important**: Do not use `/api/agents/{agentId}/message` - that endpoint no longer exists.
+All messages should go through this central messaging system.
+
+- [Update channel](https://docs.elizaos.ai/rest-reference/messaging/update-channel.md): Update channel details
+- [Update Session Timeout](https://docs.elizaos.ai/rest-reference/messaging/update-session-timeout.md): Update the timeout configuration for an active session
+- [Create a room](https://docs.elizaos.ai/rest-reference/rooms/create-a-room.md): Creates a new room for an agent
+- [Delete a room](https://docs.elizaos.ai/rest-reference/rooms/delete-a-room.md): Deletes a specific room
+- [Get agent rooms](https://docs.elizaos.ai/rest-reference/rooms/get-agent-rooms.md): Retrieves all rooms for a specific agent
+- [Get room details](https://docs.elizaos.ai/rest-reference/rooms/get-room-details.md): Retrieves details about a specific room
+- [Update a room](https://docs.elizaos.ai/rest-reference/rooms/update-a-room.md): Updates a specific room
+- [Basic health check](https://docs.elizaos.ai/rest-reference/system/basic-health-check.md): Simple hello world test endpoint
+- [Get local environment variables](https://docs.elizaos.ai/rest-reference/system/get-local-environment-variables.md): Retrieve local environment variables from .env file
+- [Get server debug info](https://docs.elizaos.ai/rest-reference/system/get-server-debug-info.md): Get debug information about active servers (debug endpoint)
+- [Get server debug info](https://docs.elizaos.ai/rest-reference/system/get-server-debug-info-1.md): Get debug information about active servers (debug endpoint)
+- [Get system status](https://docs.elizaos.ai/rest-reference/system/get-system-status.md): Returns the current status of the system with agent count and timestamp
+- [Health check endpoint](https://docs.elizaos.ai/rest-reference/system/health-check-endpoint.md): Detailed health check for the system
+- [Ping health check](https://docs.elizaos.ai/rest-reference/system/ping-health-check.md): Simple ping endpoint to check if server is responsive
+- [Stop the server](https://docs.elizaos.ai/rest-reference/system/stop-the-server.md): Initiates server shutdown
+- [Update local environment variables](https://docs.elizaos.ai/rest-reference/system/update-local-environment-variables.md): Update local environment variables in .env file
+- [Socket.IO Real-time Connection](https://docs.elizaos.ai/rest-reference/websocket/socketio-real-time-connection.md): Socket.IO connection for real-time bidirectional communication. The server uses Socket.IO v4.x for WebSocket transport with automatic fallback.
+
+**Connection URL**: `ws://localhost:3000/socket.io/` (or `wss://` for secure connections)
+
+**Socket.IO Client Connection Example**:
+```javascript
+import { io } from 'socket.io-client';
+const socket = io('http://localhost:3000');
+```
+
+**Events**:
+
+### Client to Server Events:
+- `join` - Join a room/channel
+  ```json
+  {
+    "roomId": "uuid",
+    "agentId": "uuid"
+  }
+  ```
+
+- `leave` - Leave a room/channel
+  ```json
+  {
+    "roomId": "uuid",
+    "agentId": "uuid"
+  }
+  ```
+
+- `message` - Send a message
+  ```json
+  {
+    "text": "string",
+    "roomId": "uuid",
+    "userId": "uuid",
+    "name": "string"
+  }
+  ```
+
+- `request-world-state` - Request current state
+  ```json
+  {
+    "roomId": "uuid"
+  }
+  ```
+
+### Server to Client Events:
+- `messageBroadcast` - New message broadcast
+  ```json
+  {
+    "senderId": "uuid",
+    "senderName": "string",
+    "text": "string",
+    "roomId": "uuid",
+    "serverId": "uuid",
+    "createdAt": "timestamp",
+    "source": "string",
+    "id": "uuid",
+    "thought": "string",
+    "actions": ["string"],
+    "attachments": []
+  }
+  ```
+
+- `messageComplete` - Message processing complete
+  ```json
+  {
+    "channelId": "uuid",
+    "serverId": "uuid"
+  }
+  ```
+
+- `world-state` - World state update
+  ```json
+  {
+    "agents": {},
+    "users": {},
+    "channels": {},
+    "messages": {}
+  }
+  ```
+
+- `logEntry` - Real-time log entry
+  ```json
+  {
+    "level": "number",
+    "time": "timestamp",
+    "msg": "string",
+    "agentId": "uuid",
+    "agentName": "string"
+  }
+  ```
+
+- `error` - Error event
+  ```json
+  {
+    "error": "string",
+    "details": {}
+  }
+  ```
+
+- [Core](https://docs.elizaos.ai/runtime/core.md): Core runtime system, lifecycle, and architecture
+- [Events](https://docs.elizaos.ai/runtime/events.md): Event system, event types, and event handling patterns
+- [Memory & State](https://docs.elizaos.ai/runtime/memory.md): Memory system, state management, and data persistence
+- [Messaging](https://docs.elizaos.ai/runtime/messaging.md): Real-time messaging infrastructure and Socket.IO integration
+- [Model Management](https://docs.elizaos.ai/runtime/models.md): AI model selection, registration, and type-safe usage
+- [Providers](https://docs.elizaos.ai/runtime/providers.md): Provider system for context aggregation and state composition
+- [Services](https://docs.elizaos.ai/runtime/services.md): Background services, integrations, and long-running processes
+- [Sessions API](https://docs.elizaos.ai/runtime/sessions-api.md): Complete API reference, architecture, implementation, and usage guide for the Sessions messaging system
+- [Tokenomics](https://docs.elizaos.ai/tokenomics.md): Key information about the $elizaOS token economics, contract addresses, vesting schedules, and token release details
+- [What You Can Build](https://docs.elizaos.ai/what-you-can-build.md): Here are some popular agent types to get you started. Build anything imaginable
+
+
+## Optional
+
+- [Docs for LLMs](https://docs.elizaos.ai/llms-full.txt)

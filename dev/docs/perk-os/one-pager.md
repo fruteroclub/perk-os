@@ -2,11 +2,13 @@
 
 PerkOSThe Operating System for Community Rewards
 
-One agent per community • Every platform • Pay-per-use • Fully open infrastructureEvent Presentation Document – November 30, 2025
+One agent per community • Every platform • Pay-per-use • Fully open infrastructure
+Event Presentation Document – November 30, 2025
 
 (8–10 minute talk or one-pager handout)
 
-1. The Problem – 2025 RealityIn 2025, every serious community has a treasury (tokens, USDC, revenue share), but almost none of them can actually use it without pain.
+1. The Problem – 2025 Reality
+   In 2025, every serious community has a treasury (tokens, USDC, revenue share), but almost none of them can actually use it without pain.
 
 - Rewarding top contributors → manual spreadsheets + custom scripts
 - Running a tournament or prediction game → 5–12 different tools that don’t talk to each other
@@ -16,14 +18,20 @@ One agent per community • Every platform • Pay-per-use • Fully open infras
 
 Admins are burned out. Momentum dies. Treasuries rot.
 
-2. The Vision – PerkOS Is Becoming the Infrastructure Layer (Live Today)PerkOS is the open, x402-native operating system that turns any treasury into real-time, automated engagement.Two tightly integrated layers – both shipping today:Layer 1 – PerkOS AgentEvery community launches its own fully sovereign AI agent in under 60 seconds.
+2. The Vision – PerkOS Is Becoming the Infrastructure Layer
+
+PerkOS is the open, x402-native operating system that turns any treasury into real-time, automated engagement.Two tightly integrated layers – both shipping today:
+
+Layer 1 – PerkOS Agent (Live Today)
+Every community launches its own fully sovereign AI agent in under 60 seconds.
 
 - Community-owned wallet, memory, rules, and on-chain ERC-8004 reputation
 - Single identity across Discord • Telegram • Twitch • Kick • Twitter/X (more added monthly)
 - Speaks and acts like the best human mod you’ve ever had
 - Accepts natural-language instructions from admins and members
 
-Layer 2 – PerkOS Marketplace (the x402 services bazaar) – Live November 2025Open directory where any developer registers payable APIs in <5 minutes.
+Layer 2 – PerkOS Marketplace (the x402 services bazaar) – Live November 2025
+Open directory where any developer registers payable APIs in <5 minutes.
 
 Agents discover, compare, and consume services on the fly – paying only for what they use via x402 micropayments.Services already live or in final testing (November 30, 2025):
 
@@ -87,7 +95,8 @@ Instant x402 settlement + ERC-8004 reputation update
 - Agents & middleware are completely free and open-source
 - Revenue scales 1:1 with actual community activity – no one pays when idle
 
-7. One SentencePerkOS is becoming the AWS + Stripe + Zapier for onchain communities – the infrastructure layer every treasury will run on in 2026.
+7. One Sentence
+   PerkOS is becoming the AWS + Stripe + Zapier for onchain communities – the infrastructure layer every treasury will run on in 2026.
 
 Launch your agent → PerkOS.xyz
 
