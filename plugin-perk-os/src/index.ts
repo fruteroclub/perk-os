@@ -18,6 +18,7 @@ export { inviteAction } from './actions/inviteAction.ts';
 
 // Route exports
 export { invitationRoutes } from './routes/invitation.ts';
+export { uiRoutes, clearUiCache } from './routes/ui.ts';
 
 // Type exports
 export * from './types/index.ts';

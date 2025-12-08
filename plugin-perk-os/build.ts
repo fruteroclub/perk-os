@@ -25,7 +25,7 @@ async function build() {
     // Run JavaScript build and TypeScript declarations in parallel
     console.log('Starting build tasks...');
 
-    const [buildResult, tscResult] = await Promise.all([
+    const [buildResult, tscResult, viteResult] = await Promise.all([
       // Task 1: Build with Bun
       (async () => {
         console.log('📦 Bundling with Bun...');
@@ -64,6 +64,19 @@ async function build() {
         } catch (error) {
           console.warn('⚠ Failed to generate TypeScript declarations');
           console.warn('  This is usually due to test files or type errors.');
+          return { success: false };
+        }
+      })(),
+
+      // Task 3: Build frontend with Vite
+      (async () => {
+        console.log('🎨 Building frontend with Vite...');
+        try {
+          await $`bunx vite build`.quiet();
+          console.log('✓ Frontend built');
+          return { success: true };
+        } catch (error) {
+          console.warn('⚠ Failed to build frontend:', error);
           return { success: false };
         }
       })(),
