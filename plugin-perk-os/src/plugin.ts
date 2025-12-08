@@ -12,6 +12,7 @@ import { communityDirectorySchema } from './database/schema.ts';
 
 // Import Community Directory services
 import { InvitationService } from './services/InvitationService.ts';
+import { InvitationExpirationService } from './services/InvitationExpirationService.ts';
 
 // Import Community Directory actions
 import { inviteAction } from './actions/inviteAction.ts';
@@ -42,7 +43,7 @@ export const perkOsPlugin: Plugin = {
   },
 
   // Services
-  services: [InvitationService],
+  services: [InvitationService, InvitationExpirationService],
 
   // Actions
   actions: [inviteAction],

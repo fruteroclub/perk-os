@@ -5,7 +5,7 @@
  */
 
 import { describe, expect, it, beforeEach, afterAll, beforeAll } from 'bun:test';
-import { perkOsPlugin, InvitationService } from '../index';
+import { perkOsPlugin, InvitationService, InvitationExpirationService } from '../index';
 import { createMockRuntime, setupLoggerSpies, MockRuntime } from './test-utils';
 import { IAgentRuntime } from '@elizaos/core';
 
@@ -44,8 +44,9 @@ describe('Integration: InvitationService with Plugin', () => {
 
   it('should have InvitationService registered in plugin', () => {
     expect(perkOsPlugin.services).toBeDefined();
-    expect(perkOsPlugin.services?.length).toBe(1);
+    expect(perkOsPlugin.services?.length).toBe(2);
     expect(perkOsPlugin.services?.[0]).toBe(InvitationService);
+    expect(perkOsPlugin.services?.[1]).toBe(InvitationExpirationService);
   });
 
   it('should get InvitationService from runtime', () => {

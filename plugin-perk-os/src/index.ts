@@ -11,6 +11,7 @@ export { perkOsPlugin } from './plugin.ts';
 
 // Service exports
 export { InvitationService } from './services/InvitationService.ts';
+export { InvitationExpirationService } from './services/InvitationExpirationService.ts';
 
 // Action exports
 export { inviteAction } from './actions/inviteAction.ts';
