@@ -47,7 +47,7 @@ describe('PerkOS Plugin Configuration', () => {
 
   it('should have invitation routes registered (CD-105)', () => {
     expect(perkOsPlugin.routes).toBeDefined();
-    expect(perkOsPlugin.routes?.length).toBe(5);
+    expect(perkOsPlugin.routes?.length).toBe(7); // 5 invitation + 2 UI routes
 
     const routeNames = perkOsPlugin.routes?.map((r) => r.name);
     expect(routeNames).toContain('list-invitations');
@@ -55,6 +55,9 @@ describe('PerkOS Plugin Configuration', () => {
     expect(routeNames).toContain('cancel-invitation');
     expect(routeNames).toContain('get-invitation');
     expect(routeNames).toContain('invitation-stats');
+    // UI routes
+    expect(routeNames).toContain('ui-index');
+    expect(routeNames).toContain('ui-assets');
   });
 });
 
