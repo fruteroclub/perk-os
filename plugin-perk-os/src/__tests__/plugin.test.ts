@@ -40,10 +40,21 @@ describe('PerkOS Plugin Configuration', () => {
     expect(perkOsPlugin.actions?.[0].name).toBe('CREATE_INVITATION');
   });
 
-  it('should have empty arrays for providers and routes', () => {
-    // These will be populated in future tickets
+  it('should have empty providers array', () => {
+    // Providers will be populated in future tickets
     expect(perkOsPlugin.providers).toEqual([]);
-    expect(perkOsPlugin.routes).toEqual([]);
+  });
+
+  it('should have invitation routes registered (CD-105)', () => {
+    expect(perkOsPlugin.routes).toBeDefined();
+    expect(perkOsPlugin.routes?.length).toBe(5);
+
+    const routeNames = perkOsPlugin.routes?.map((r) => r.name);
+    expect(routeNames).toContain('list-invitations');
+    expect(routeNames).toContain('create-invitation');
+    expect(routeNames).toContain('cancel-invitation');
+    expect(routeNames).toContain('get-invitation');
+    expect(routeNames).toContain('invitation-stats');
   });
 });
 

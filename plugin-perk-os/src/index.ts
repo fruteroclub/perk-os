@@ -15,6 +15,9 @@ export { InvitationService } from './services/InvitationService.ts';
 // Action exports
 export { inviteAction } from './actions/inviteAction.ts';
 
+// Route exports
+export { invitationRoutes } from './routes/invitation.ts';
+
 // Type exports
 export * from './types/index.ts';
 

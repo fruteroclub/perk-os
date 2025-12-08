@@ -16,6 +16,9 @@ import { InvitationService } from './services/InvitationService.ts';
 // Import Community Directory actions
 import { inviteAction } from './actions/inviteAction.ts';
 
+// Import Community Directory routes
+import { invitationRoutes } from './routes/invitation.ts';
+
 /**
  * PerkOS Community Directory Plugin
  *
@@ -47,8 +50,8 @@ export const perkOsPlugin: Plugin = {
   // Providers (will be added as needed)
   providers: [],
 
-  // Routes (will be added in CD-105, CD-302, etc.)
-  routes: [],
+  // Routes for invitation management (CD-105)
+  routes: invitationRoutes,
 };
 
 export default perkOsPlugin;
