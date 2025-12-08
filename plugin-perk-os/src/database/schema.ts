@@ -36,11 +36,11 @@ export const communityInvitations = pgTable(
   {
     invitation_id: uuid('invitation_id').primaryKey().defaultRandom(),
     invitation_code: varchar('invitation_code', { length: 16 }).unique().notNull(),
-    created_by: varchar('created_by', { length: 20 }).notNull(), // member_id of inviter
+    created_by: varchar('created_by', { length: 255 }).notNull(), // ElizaOS entityId (UUID)
     invited_telegram_username: varchar('invited_telegram_username', { length: 255 }),
     status: varchar('status', { length: 20 }).default('pending').notNull(),
     expires_at: timestamp('expires_at').notNull(),
-    accepted_by: varchar('accepted_by', { length: 20 }), // member_id of acceptor
+    accepted_by: varchar('accepted_by', { length: 255 }), // ElizaOS entityId (UUID)
     accepted_at: timestamp('accepted_at'),
     created_at: timestamp('created_at').defaultNow().notNull(),
     updated_at: timestamp('updated_at').defaultNow().notNull(),
@@ -87,7 +87,7 @@ export const communityMembers = pgTable(
     reputation_tier: varchar('reputation_tier', { length: 50 }).default('Novice'),
 
     // Invitation tracking
-    invited_by: varchar('invited_by', { length: 20 }), // member_id of inviter
+    invited_by: varchar('invited_by', { length: 255 }), // ElizaOS entityId (UUID)
 
     // Registration fee (post-MVP)
     registration_fee_paid: boolean('registration_fee_paid').default(false),

@@ -7,10 +7,13 @@
 import { perkOsPlugin } from './plugin.ts';
 
 // Plugin exports
-export { perkOsPlugin, StarterService } from './plugin.ts';
+export { perkOsPlugin } from './plugin.ts';
 
-// Backwards compatibility
-export { starterPlugin } from './plugin.ts';
+// Service exports
+export { InvitationService } from './services/InvitationService.ts';
+
+// Action exports
+export { inviteAction } from './actions/inviteAction.ts';
 
 // Type exports
 export * from './types/index.ts';
