@@ -25,7 +25,7 @@ async function build() {
     // Run JavaScript build and TypeScript declarations in parallel
     console.log('Starting build tasks...');
 
-    const [buildResult, tscResult, viteResult] = await Promise.all([
+    const [buildResult, _tscResult, _viteResult] = await Promise.all([
       // Task 1: Build with Bun
       (async () => {
         console.log('📦 Bundling with Bun...');
